@@ -63,10 +63,10 @@ export default function ListsOverview({ isDark, lists, setCurrentList, setShowNe
               </div>
               <div onClick={() => setCurrentList(list)} className="space-y-1">
                 <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {list.products.length} prodotti
+                  {list.products} prodotti
                 </p>
                 <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                  {list.products.filter(p => p.isPurchased).length} completati
+                  {list.purchased} completati
                 </p>
               </div>
             </div>

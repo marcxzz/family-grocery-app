@@ -1,5 +1,6 @@
 'use client'
 
+import { GetLists } from '@/data/interface';
 import { useEffect, useState } from 'react';
 
 export default function useGroceryLists() {
@@ -26,6 +27,12 @@ export default function useGroceryLists() {
   useEffect(() => {
     const storedTheme = localStorage.getItem('family-grocery-theme');
     setIsDark(storedTheme === 'true');
+
+    const fetchLists = async () => {
+      const savedLists = await GetLists()
+      setLists(savedLists)
+    }
+    fetchLists()
   }, []);
 
   const createList = (title, supermarket) => {
