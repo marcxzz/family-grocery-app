@@ -31,16 +31,16 @@ export default function NewListForm({ supermarkets, createList, setShowNewListFo
       </div>
       <div className="flex gap-3 mt-6">
         <button
+          onClick={() => setShowNewListForm(false)}
+          className={`flex-1 bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-900 p-3 rounded-lg hover:bg-gray-300`}>
+          Annulla
+        </button>
+        <button
           onClick={() => title && createList(title, supermarket)}
           disabled={!title}
           className="flex-1 bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Crea Lista
-        </button>
-        <button
-          onClick={() => setShowNewListForm(false)}
-          className={`flex-1 bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-900 p-3 rounded-lg hover:bg-gray-300`}>
-          Annulla
         </button>
       </div>
     </Modal>

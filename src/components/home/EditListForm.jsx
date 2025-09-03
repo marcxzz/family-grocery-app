@@ -31,17 +31,17 @@ export default function EditListForm({ list, supermarkets, updateList, setEditin
       </div>
       <div className="flex gap-3 mt-6">
         <button
+          onClick={() => setEditingList(null)}
+          className={`flex-1 bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-900 p-3 rounded-lg hover:bg-gray-300`}
+        >
+          Annulla
+        </button>
+        <button
           onClick={() => name && updateList(list.id, name, supermarket)}
           disabled={!name}
           className="flex-1 bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           Salva
-        </button>
-        <button
-          onClick={() => setEditingList(null)}
-          className={`flex-1 bg-gray-700 text-white dark:bg-gray-200 dark:text-gray-900 p-3 rounded-lg hover:bg-gray-300`}
-        >
-          Annulla
         </button>
       </div>
     </Modal>

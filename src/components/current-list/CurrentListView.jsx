@@ -54,6 +54,7 @@ export default function CurrentListView({ currentList: currentListParam, superma
     }
   }
 
+  // TODO: execute query on db
   const updateProduct = (productId, name, quantity, quantityType, supermarket, isImportant) => {
     const updatedProducts = currentList.products.map(product =>
       product.id === productId
@@ -98,11 +99,14 @@ export default function CurrentListView({ currentList: currentListParam, superma
   }
 
   const clearPurchasedProducts = async () => {
-    const res = await DeletePurchasedProducts(currentList.id)
-    if (res) {
-    const updatedProducts = currentList.products.filter(product => !product.isPurchased)
-    const updatedList = { ...currentList, products: updatedProducts }
-    setCurrentList(updatedList)
+    const purchasedProducts = currentList.products.filter(p => p.isPurchased === true)
+    if (purchasedProducts.length > 0) {
+      const res = await DeletePurchasedProducts(currentList.id)
+      if (res) {
+      const updatedProducts = currentList.products.filter(product => !product.isPurchased)
+      const updatedList = { ...currentList, products: updatedProducts }
+      setCurrentList(updatedList)
+      }
     }
   }
 
