@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.list-card {
+  @apply flex flex-col bg-gray-800 border-gray-700 dark:bg-white dark:border-gray-200 border rounded-lg p-4 transition-shadow cursor-pointer;
+}
+
+.button {
+  @apply px-4 py-2 rounded-lg;
+}
+.button-primary {
+  @apply bg-blue-500 text-white hover:bg-blue-600
+}
+.button-icon {
+  @apply flex items-center gap-2;
+}
+
+/* .button-card {
+  @apply 
+} */
