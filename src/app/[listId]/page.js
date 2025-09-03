@@ -1,6 +1,8 @@
+export const dynamic = 'force-dynamic' // disables caching
+
 import CurrentListView from "@/components/current-list/CurrentListView"
 import { GetListProducts } from "@/data/products"
-import { GetQtyTypes, GetSupermarkets } from "@/data/utils"
+import { GetSupermarkets } from "@/data/utils"
 import { notFound } from "next/navigation"
 
 export default async function ListDetails({ params, searchParams }) {

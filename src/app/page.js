@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic' // disables caching
+
 import ListsOverview from "@/components/home/ListsOverview";
 import { GetAllLists } from "@/data/lists";
 import { GetSupermarkets } from "@/data/utils";
