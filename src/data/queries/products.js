@@ -1,4 +1,4 @@
-export const getListProducts = `SELECT * FROM "tblProducts" WHERE "listId" = $1 ORDER BY "id"`
+export const getListProducts = `SELECT * FROM "tblProducts" WHERE "listId" = $1 ORDER BY "isImportant" DESC, "id"`
 
 export const createProductNoSupermarket = `INSERT INTO "tblProducts" ("name", "quantity", "quantityType", "isImportant", "listId") VALUES ($1, $2, $3, $4, $5) RETURNING *`
 export const createProduct = `INSERT INTO "tblProducts" ("name", "quantity", "quantityType", "isImportant", "supermarketId", "listId") VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`
