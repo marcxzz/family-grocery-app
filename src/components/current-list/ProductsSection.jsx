@@ -48,7 +48,7 @@ export default function ProductsSection({
                   onDragOver={(e) => handleDragOver(e, index)}
                   onDragLeave={handleDragLeave}
                   onDrop={(e) => handleDrop(e, index)}
-                  className={`bg-gray-800 border-gray-700 dark:bg-white dark:border-gray-200 border rounded-lg p-4 cursor-move transition-all ${
+                  className={`bg-gray-800 border-gray-700 dark:bg-white dark:border-gray-200 border rounded-lg p-2 py-3 cursor-move transition-all ${
                     product.isImportant ? 'border-red-500 border-2 dark:border-red-500' : ''
                   }`}
                 >
