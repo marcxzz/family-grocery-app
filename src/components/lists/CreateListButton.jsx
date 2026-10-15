@@ -10,7 +10,7 @@ export function CreateListButton({ supermarkets }) {
 
   return (
     <>
-      <Button onClick={() => setOpen(true)} size="sm" className="gap-1.5">
+      <Button onClick={() => setOpen(true)} className="gap-1.5">
         <Plus className="h-4 w-4" />
         Nuova Lista
       </Button>

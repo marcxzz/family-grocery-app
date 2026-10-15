@@ -9,6 +9,9 @@ import {
 } from "@/actions/supermarkets";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Label } from "@/components/ui/label";
+
+const NAME_MAX_LENGHT = 15
 
 export function SupermarketManager({ supermarkets }) {
   const [name, setName] = useState("");
@@ -47,13 +50,19 @@ export function SupermarketManager({ supermarkets }) {
   return (
     <div className="space-y-6">
       <form onSubmit={handleAdd} className="flex gap-2">
-        <Input
-          placeholder="Nuovo supermercato (max 15 car.)..."
-          maxLength={15}
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          disabled={isAdding}
-        />
+        <div className="flex flex-col items-start gap-1.5">
+          <Input
+            placeholder="Nome supermercato"
+            maxLength={NAME_MAX_LENGHT}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            disabled={isAdding}
+            className="h-9"
+          />
+          <Label className={`pl-0.5 ${name.length > NAME_MAX_LENGHT ? "text-destructive" : "text-muted-foreground"}`}>
+            {name.length}/{NAME_MAX_LENGHT} caratteri
+          </Label>
+        </div>
         <Button type="submit" disabled={isAdding || !name.trim()}>
           {isAdding ? <Loader2 className="h-4 w-4 animate-spin" /> : <Plus className="h-4 w-4 mr-1" />}
           Aggiungi
@@ -79,6 +88,9 @@ export function SupermarketManager({ supermarkets }) {
                 <Trash2 className="h-4 w-4 text-destructive" />
               )}
             </Button>
+            {/* TODO: add edit button */}
+            {/* TODO: add delete confirm dialog */}
+            {/* IDEA: add supermarket sorting editing (change order in dropdowns) */}
           </div>
         ))}
       </div>
