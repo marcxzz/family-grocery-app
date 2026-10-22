@@ -92,7 +92,7 @@ export function ListFormDialog({ open, onOpenChange, list = null, supermarkets =
                 <SelectItem value="none">Nessuno / Misto</SelectItem>
                 {supermarkets.map((s) => (
                   <SelectItem key={s.id} value={String(s.id)}>
-                    {s.name} {/* FIXME: fix item label (name, not ID) */}
+                    {s.name} {/* FIXME: #6 supermarket name should be displayed instead of its ID */}
                   </SelectItem>
                 ))}
               </SelectContent>
