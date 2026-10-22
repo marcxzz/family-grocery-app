@@ -23,7 +23,7 @@ export default async function HomePage() {
           </p>
         </div>
         <CreateListButton supermarkets={supermarkets} />
-        {/* TODO: add quick product button */}
+        {/* TODO(#7): add quick product input */}
       </div>
 
       {lists.length === 0 ? (

@@ -56,6 +56,8 @@ export default async function ListDetailPage({ params }) {
 
       <QuickAddBar listId={list.id} supermarkets={supermarkets} />
 
+      {/* TODO(#4): add search bar */}
+
       <div className="space-y-3">
         <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
           Da comprare ({toBuy.length})
