@@ -7,7 +7,7 @@ export default function manifest() {
     display: 'standalone',
     background_color: '#ffffff',
     theme_color: '#000000',
-    // IDEA: #5 add quick product shortcut
+    // IDEA(#5): add quick product shortcut
     icons: [
       {
         "purpose": "any maskable monochrome",
