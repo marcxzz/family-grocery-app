@@ -11,6 +11,9 @@ const nextConfig = {
       },
     },
   },
+  allowedDevOrigins: [
+    // "f7dd-93-39-133-97.ngrok-free.app",
+  ]
 };
 
 export default nextConfig;
