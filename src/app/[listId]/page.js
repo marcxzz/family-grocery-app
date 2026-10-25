@@ -64,7 +64,7 @@ export default async function ListDetailPage({ params }) {
         </h2>
 
         {toBuy.length === 0 ? (
-          <p className="rounded-lg border border-dashed p-6 text-center text-sm text-muted-foreground">
+          <p className="rounded-xl border border-dashed p-6 text-center text-sm text-muted-foreground">
             Nessun prodotto da acquistare.
           </p>
         ) : (
